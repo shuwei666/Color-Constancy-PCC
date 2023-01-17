@@ -3,13 +3,14 @@
 Shuwei Yue and *[Minchen Wei](https://www.polyucolorlab.com/)
 
 *Color, Imaging, and Metaverse Research Center, The Hong Kong Polytechnic University.*
-![PCC-MLP-model](https://user-images.githubusercontent.com/106613332/212549365-c7d0bd52-aa4f-4289-b315-0e4efef8a000.png)
+
+![PCC-MLP-model](https://user-images.githubusercontent.com/106613332/212873202-a61d95e0-7e59-4c1c-8307-1e0ff74038bd.png)
 
 ## Code
 
 ####  Prerequisite   
 
-* Pytorch 1.11.0+cu113
+* Pytorch
 * opencv-python  
 
 #### Training
@@ -32,7 +33,7 @@ To train PCC, training/validation data should have the following formatting:
 So, it is better to preprocess your data and corresponding labels into *.npy* format.
 The processed *Recommend-ColorChecker dataset* (**CC2018**) are provided in the folder of `datasets/CC2018/`. Noted that the black level and masked card of this dataset have subtracted, then resized to $64\times64$ with normalized.
 
-- step 2
+- step 2:
 
 Run `train.py`  
 

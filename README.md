@@ -5,6 +5,21 @@ Shuwei Yue and *[Minchen Wei](https://www.polyucolorlab.com/)
 *Color, Imaging, and Metaverse Research Center, The Hong Kong Polytechnic University.*
 
 ![PCC-MLP-model](https://user-images.githubusercontent.com/106613332/212873202-a61d95e0-7e59-4c1c-8307-1e0ff74038bd.png)
+If you use this code, please cite our paper:
+
+```
+@article{yue2023color,
+  title={Color constancy from a pure color view},
+  author={Yue, Shuwei and Wei, Minchen},
+  journal={JOSA A},
+  volume={40},
+  number={3},
+  pages={602--610},
+  year={2023},
+  publisher={Optica Publishing Group}
+}
+
+```
 
 ## Code
 

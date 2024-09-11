@@ -1,0 +1,11 @@
+JosaPcc(
+  (layers): ModuleList(
+    (0): Linear(in_features=8, out_features=8, bias=True)
+    (1): Linear(in_features=8, out_features=8, bias=True)
+    (2): Linear(in_features=8, out_features=8, bias=True)
+    (3): Linear(in_features=8, out_features=8, bias=True)
+    (4): Linear(in_features=8, out_features=8, bias=True)
+    (5): Linear(in_features=8, out_features=2, bias=True)
+  )
+)
+{'lr': 0.001, 'batch_size': 1, 'fold_num': 0, 'data_name': 'CC2018', 'time_file': '11-20-17', 'seed': '666'}

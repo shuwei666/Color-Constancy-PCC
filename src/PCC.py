@@ -1,5 +1,5 @@
 import torch.nn as nn
-from torch.nn import functional as F
+import torch.nn.functional as F
 
 
 class JosaPcc(nn.Module):
@@ -9,17 +9,16 @@ class JosaPcc(nn.Module):
          i.e., the first_layer and last_layer.
         """
         super(JosaPcc, self).__init__()
-        self.first_layer = nn.Linear(in_feature, neurons)
-        self.hidden_layer = nn.ModuleList([nn.Linear(neurons, neurons) for _ in range(layer_num)])
-        self.last_layer = nn.Linear(neurons, out_features)
+        self.layers = nn.ModuleList([
+            nn.Linear(in_feature if i == 0 else neurons, 
+                      out_features if i == layer_num else neurons)
+            for i in range(layer_num + 1)
+        ])
 
     def forward(self, x):
         x = x.reshape(x.shape[0], -1)
-        x = self.first_layer(x)
-
-        for layer in self.hidden_layer:
-            x = F.relu(layer(x))
-
-        out = self.last_layer(x)
-
-        return out
+        for i, layer in enumerate(self.layers):
+            x = layer(x)
+            if i < len(self.layers) - 1:
+                x = F.relu(x)
+        return x

@@ -19,26 +19,16 @@ class AwbAug:
         self.illu_path = illu_path
 
     def awb_aug(self, gd, img):
-        self.illu = gd
-        self.img = img
-
         def circle_point(illu, radius=0.01):
             while True:
-                res_r = random.uniform(illu[0] - radius, illu[0] + radius)
-                res_g = random.uniform(illu[1] - radius, illu[1] + radius)
-                dis = (res_r - illu[0]) ** 2 + (res_g - illu[1]) ** 2
-                if dis <= radius ** 2:
+                res_r = random.uniform(max(0, illu[0] - radius), min(0.999999, illu[0] + radius))
+                res_g = random.uniform(max(0, illu[1] - radius), min(0.999999 - res_r, illu[1] + radius))
+                if (res_r - illu[0])**2 + (res_g - illu[1])**2 <= radius**2:
                     return np.array([res_r, res_g, 1 - res_r - res_g])
 
-        num = len(self.illu_path)
-        random_idx = np.random.randint(0, num, 1)[0]
-        illu_name = self.illu_path[random_idx]
-        aug_illu = np.load(illu_name)
-        # awb-aug
+        aug_illu = np.load(random.choice(self.illu_path))
         aug_illu = circle_point(aug_illu)
-
-        new_img = np.dot(self.img, np.diag(aug_illu / self.illu))
-
+        new_img = np.dot(img, np.diag(aug_illu / gd))
         return norm_img(new_img), aug_illu
 
     # def crop(self, img):

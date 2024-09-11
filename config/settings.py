@@ -1,5 +1,6 @@
 import torch
 import numpy as np
+import random
 
 DEVICE_TYPE = 'cuda:0'
 
@@ -21,6 +22,10 @@ DEVICE = get_device()
 def set_seed(seed=666):
 
     torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)  # 如果使用多GPU
     np.random.seed(seed)
+    torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
+    random.seed(seed)
 

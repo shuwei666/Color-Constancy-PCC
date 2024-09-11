@@ -62,7 +62,7 @@ Run `test.py`
 
 ## PolyU Pure Color dataset
 
-We will release the full dataset soon. For now, only thumbnails are provided in the following link:
+Thumbnails are provided in the following link:
 
  [pcc_huawei_thumbnail](https://connectpolyu-my.sharepoint.com/:f:/g/personal/21064184r_connect_polyu_hk/EjKJSnalMRpMn0nm4fJoIeEB34G9oxnu8MW7SYu2iSvC7g?e=dvk5vr)
  

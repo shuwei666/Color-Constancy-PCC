@@ -62,9 +62,9 @@ Run `test.py`
 
 ## PolyU Pure Color dataset
 
-Thumbnails are provided in the following link:
+Thumbnails(`.png`) and full-resolution images(`.npy`) are provided in the following link:
 
- [pcc_huawei_thumbnail](https://connectpolyu-my.sharepoint.com/:f:/g/personal/21064184r_connect_polyu_hk/EjKJSnalMRpMn0nm4fJoIeEB34G9oxnu8MW7SYu2iSvC7g?e=dvk5vr)
+ [PolyU PureColor dataset](https://www.123865.com/s/eNurTd-oFWmH)
  
  ![thumbnails-view](https://user-images.githubusercontent.com/106613332/212550111-52245d3b-f989-4cf8-8fcf-82187d46cbfc.png)
 
